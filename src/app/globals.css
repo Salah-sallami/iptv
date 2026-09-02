@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
+  --brand-red: #DC2626;
+  --brand-blue: #2563EB;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #DC2626;
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+/* Custom scrollbar for light mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Typography styles */
+.font-headline {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.font-editorial {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+}
+
+/* Signature Pill Buttons in Light Mode */
+.btn-pill-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem 0.75rem 1.75rem;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.2);
+}
+
+.btn-pill-primary:hover {
+  background-color: #1E293B;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+}
+
+.btn-pill-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem 0.75rem 1.75rem;
+  background-color: #DC2626;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px -2px rgba(220, 38, 38, 0.3);
+}
+
+.btn-pill-red:hover {
+  background-color: #B91C1C;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.4);
+}
+
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem 0.75rem 1.75rem;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #CBD5E1;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-pill-outline:hover {
+  border-color: #0F172A;
+  background-color: #F8FAFC;
+  transform: translateY(-2px);
+}
+
+.btn-circle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-circle-icon-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-pill-primary:hover .btn-circle-icon,
+.btn-pill-red:hover .btn-circle-icon,
+.btn-pill-outline:hover .btn-circle-icon-dark {
+  transform: translate(2px, -2px);
+}
+
+/* Light Card Styling */
+.card-light {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-light:hover {
+  border-color: #CBD5E1;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
+}
+
+.badge-index-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.375rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Ken Burns Image Motion Drift */
+@keyframes kenburns-drift {
+  0% {
+    transform: scale(1.02) translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.12) translate(-6px, -4px);
+  }
+  100% {
+    transform: scale(1.06) translate(4px, 2px);
+  }
+}
+
+/* Scroll Animation Utilities */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
