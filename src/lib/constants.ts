@@ -48,8 +48,8 @@ export const SITE_CONFIG = {
     country: "Canada",
   },
   operatingHours: "24/7/365 Real-Time Customer Support",
-  whatsappNumber: "+1 (613) 555-0199",
-  whatsappUrl: "https://wa.me/16135550199?text=Hello%20Streamora%20IPTV%2C%20I%20have%20a%20question%20about%20your%20IPTV%20service.",
+  whatsappNumber: "+212 648-832898",
+  whatsappUrl: "https://wa.me/212648832898?text=Hello%20Streamora%20IPTV%2C%20I%20have%20a%20question%20about%20your%20IPTV%20service.",
   telegramHandle: "@streamoraiptv_official",
   rating: {
     value: 4.96,
@@ -59,9 +59,9 @@ export const SITE_CONFIG = {
 };
 
 export function getWhatsAppUrl(message?: string): string {
-  const base = "https://wa.me/16135550199";
+  const base = "https://wa.me/212648832898";
   if (!message) {
-    return "https://wa.me/16135550199?text=Hello%20Streamora%20IPTV%2C%20I%20have%20a%20question%20about%20your%20IPTV%20service.";
+    return "https://wa.me/212648832898?text=Hello%20Streamora%20IPTV%2C%20I%20have%20a%20question%20about%20your%20IPTV%20service.";
   }
   return `${base}?text=${encodeURIComponent(message)}`;
 }
